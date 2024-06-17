@@ -1,0 +1,28 @@
+Listening on port: 8000
+Database connection established...
+(node:676311) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/5.x/docs/deprecations.html#findandmodify
+(Use `node --trace-deprecation ...` to show where the warning was created)
+SyntaxError: Unexpected token t in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:231:16)
+    at done (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+SyntaxError: Unexpected token t in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/debbie/Bounty-Hawk/server/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:231:16)
+    at done (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/debbie/Bounty-Hawk/server/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)

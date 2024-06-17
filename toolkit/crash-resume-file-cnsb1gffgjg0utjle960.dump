@@ -1,0 +1,24 @@
+{
+	"resumeFrom": {
+		"CVE-2018-25031": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"dvwa-headless-automatic-login": {
+			"completed": false,
+			"inFlight": {
+				"111": {},
+				"112": {},
+				"113": {},
+				"114": {},
+				"115": {},
+				"116": {},
+				"117": {},
+				"118": {},
+				"119": {},
+				"120": {},
+				"121": {}
+			}
+		}
+	}
+}

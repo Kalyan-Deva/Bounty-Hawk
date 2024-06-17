@@ -1,0 +1,36 @@
+{
+	"resumeFrom": {
+		"CVE-2022-4298": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"MobileIron": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"client-side-prototype-pollution-bracket": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"client-side-prototype-pollution-bracket-constructor-firstparam": {
+			"completed": false,
+			"inFlight": {
+				"109": {},
+				"110": {},
+				"111": {},
+				"112": {},
+				"113": {},
+				"114": {},
+				"115": {},
+				"116": {},
+				"117": {},
+				"118": {},
+				"119": {}
+			}
+		},
+		"client-side-prototype-pollution-bracket-firstparam": {
+			"completed": true,
+			"inFlight": {}
+		}
+	}
+}
