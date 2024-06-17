@@ -1,0 +1,102 @@
+{
+	"resumeFrom": {
+		"apple-app-site-association": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"aws-ecs-container-agent-tasks": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"clientaccesspolicy": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"cluster-7bcd46e705157ab1983d65f22848b56f64568f4d9ea4d0e0eeff3c5a15be9e6f": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"cluster-eb2b5879a420f200949825d6165bc03b5b1512092a4aa1356828e0fb0bf7f28a": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"detect-dns-over-https": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"external-service-interaction": {
+			"completed": false,
+			"inFlight": {
+				"33": {}
+			}
+		},
+		"gpc-json": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"htaccess-config": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"http-trace": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"joomla-htaccess-file": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"joomla-manifest-file": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"moodle-changelog-file": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"netflix-conductor-version": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"old-copyright": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"options-method": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"rdap-whois": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"robots-txt": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"robots-txt-endpoint": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"security-txt": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"sitemap-detect": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"spnego-detect": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"x-recruiting-header": {
+			"completed": true,
+			"inFlight": {}
+		},
+		"xml-schema-detect": {
+			"completed": true,
+			"inFlight": {}
+		}
+	}
+}

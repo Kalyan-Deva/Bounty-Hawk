@@ -1,0 +1,65 @@
+# Main Workflow
+DEFINE FUNCTION main()
+    args = arg_parse()
+    START timer
+    logger = INIT Logger()
+    CLEANUP old screenshots and dumps
+    CLEAR previous vulnerabilities
+    UPDATE Nuclei templates
+    thisFqdn = GET FQDN object(args)
+    urls = BUILD URL string(thisFqdn)
+    WRITE URLs to file
+    now = GET current datetime as string
+
+    IF args.full THEN
+        RUN full Nuclei scan(args, now)
+    ELSE
+        RUN safe templates scans(args, now, logger)
+
+    MOVE screenshots to public directory
+    STOP timer
+    LOG completion
+    PRINT completion message
+
+# Safe Templates Scans
+DEFINE FUNCTION run_safe_templates_scans(args, now, logger)
+    SCANS = [technologies_scan, exposed_panels_scan, misconfigurations_scan, exposures_scan,
+             rs0n_scan, headless_scan, dns_scan, ssl_scan, vulnerabilities_scan, cves_scan]
+    FOR scan_function IN SCANS DO
+        update_scan_progress(scan_function)
+        scan_function(args, now, logger)
+
+# Example Scan Function
+DEFINE FUNCTION technologies_scan(args, now, logger)
+    LOG start of scan
+    CONNECT to ProtonVPN IF required
+    home_dir = GET home directory
+    RUN subprocess with Nuclei using technologies templates
+    data = PROCESS results(args, now)
+    thisFqdn = GET FQDN object(args)
+    UPDATE vulnerabilities in database
+    DISCONNECT from ProtonVPN IF connected
+    VALIDATE network connection
+    LOG completion of scan
+
+# Utility Functions
+DEFINE FUNCTION arg_parse()
+    PARSE command line arguments
+
+DEFINE FUNCTION update_scan_progress(scan_name, target_domain)
+    SEND progress update to server
+
+DEFINE FUNCTION process_results(args, now)
+    READ results file
+    PARSE JSON results
+    RETURN processed data
+
+DEFINE FUNCTION clear_vulns(args)
+    CLEAR previous vulnerabilities from database
+
+DEFINE FUNCTION update_nuclei(logger)
+    UPDATE Nuclei templates
+
+# Run Main Function
+IF __name__ == "__main__" THEN
+    main()

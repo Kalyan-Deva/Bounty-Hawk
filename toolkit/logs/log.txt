@@ -1,0 +1,400 @@
+[INIT] 2024-02-22 23:16:33.219840 | Wildfire.py -- Logger Initialized
+[MSG] 2024-02-22 23:16:33.219984 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-02-22 23:16:33.220004 | Wildfire.py -- Running Fire-Starter.py -> floqast.app
+[INIT] 2024-02-22 23:16:33.297074 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-02-22 23:16:33.304991 | Fire-Starter.py -- Running Amass -> floqast.app
+[MSG] 2024-02-23 00:17:00.761804 | Fire-Starter.py -- Amass Completed Successfully: 81 Results Found
+[MSG] 2024-02-23 00:17:00.771194 | Fire-Starter.py -- Running Sublist3r -> floqast.app
+[MSG] 2024-02-23 00:17:11.968845 | Fire-Starter.py -- Sublist3r Completed Successfully: 17 Results Found
+[MSG] 2024-02-23 00:17:11.977878 | Fire-Starter.py -- Running Assetfinder -> floqast.app
+[MSG] 2024-02-23 00:17:13.294592 | Fire-Starter.py -- Assetfinder Completed Successfully: 49 Results Found
+[MSG] 2024-02-23 00:17:13.303817 | Fire-Starter.py -- Running GAU -> floqast.app
+[MSG] 2024-02-23 00:18:23.070222 | Fire-Starter.py -- GAU Completed Successfully: 16 Results Found
+[MSG] 2024-02-23 00:18:23.089029 | Fire-Starter.py -- Running CRT -> floqast.app
+[MSG] 2024-02-23 00:18:24.515760 | Fire-Starter.py -- CTL Completed Successfully: 18 Results Found
+[MSG] 2024-02-23 00:18:24.525062 | Fire-Starter.py -- Running Subfinder -> floqast.app
+[MSG] 2024-02-23 00:18:32.830975 | Fire-Starter.py -- Subfinder Completed Successfully: 30 Results Found
+[MSG] 2024-02-23 00:18:32.837916 | Fire-Starter.py -- Running Subfinder (Recursive) -> floqast.app
+[MSG] 2024-02-23 00:18:47.303202 | Fire-Starter.py -- Subfinder (Recursive) Completed Successfully: 30 Results Found
+[MSG] 2024-02-23 00:18:47.310292 | Fire-Starter.py -- Running ShuffleDNS (Default) -> floqast.app
+[MSG] 2024-02-23 00:26:20.339762 | Fire-Starter.py -- ShuffleDNS (Default) Completed Successfully: 9 Results Found
+[MSG] 2024-02-23 00:26:20.347820 | Fire-Starter.py -- Building CeWL Wordlist -> floqast.app
+[MSG] 2024-02-23 00:26:24.066848 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> floqast.app
+[MSG] 2024-02-23 00:26:24.938908 | Fire-Starter.py -- ShuffleDNS (Custom) Completed Successfully: 0 Results Found
+[MSG] 2024-02-23 04:55:47.608753 | Fire-Starter.py -- Running GoSpider -> floqast.app
+[MSG] 2024-02-23 04:56:17.971668 | Fire-Starter.py -- GoSpider Completed Successfully: 16 Results Found
+[MSG] 2024-02-23 04:56:17.982528 | Fire-Starter.py -- Running Subdomainizer -> floqast.app
+[MSG] 2024-02-23 05:41:54.784658 | Fire-Starter.py -- Subdomainizer Completed Successfully: 76 Results Found
+[MSG] 2024-02-23 05:41:54.793074 | Fire-Starter.py -- Clear Sky Data NOT Found.  Skipping...
+[MSG] 2024-02-23 05:42:08.465214 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-02-23 05:42:08.864835 | Fire-Starter.py -- Nuclei Update Succesful!
+[DONE] 2024-02-23 05:43:42.035667 | Fire-Starter.py -- Fire-Starter Completed Successfully -> floqast.app
+[DONE] 2024-02-23 05:43:42.085123 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-02-24 10:08:51.810044 | Wildfire.py -- Logger Initialized
+[MSG] 2024-02-24 10:08:51.810184 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-02-24 10:08:51.810205 | Wildfire.py -- Running Fire-Scanner.py -> floqast.app
+[INIT] 2024-02-24 10:08:51.889054 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-02-24 10:08:51.942172 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-02-24 10:09:12.107703 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-02-24 10:09:12.116405 | Fire-Scanner.py -- Running Nuclei (Technologies) -> floqast.app
+[MSG] 2024-02-24 10:21:20.411393 | Fire-Scanner.py -- Nuceli Scan (Technologies) Completed Successfully w/ 0 Results Against floqast.app
+[MSG] 2024-02-24 10:21:20.416707 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> floqast.app
+[MSG] 2024-02-24 11:50:13.659171 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against floqast.app
+[MSG] 2024-02-24 11:50:13.666426 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> floqast.app
+[ERROR] 2024-02-24 12:11:50.419628 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) Failed!  Exception: HTTPSConnectionPool(host='hooks.slack.com', port=443): Max retries exceeded with url: /services/%0A (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3f8d38b850>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[MSG] 2024-02-24 12:11:50.423975 | Fire-Scanner.py -- Running Nuclei (Exposures) -> floqast.app
+[ERROR] 2024-02-24 12:17:40.684190 | Fire-Scanner.py -- Running Nuclei (Exposures) Failed!  Exception: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/auto (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3f8dbc3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[MSG] 2024-02-24 12:17:40.686291 | Fire-Scanner.py -- Running Nuclei (rs0n) -> floqast.app
+[INIT] 2024-03-13 13:38:27.251770 | Wildfire.py -- Logger Initialized
+[DONE] 2024-03-13 13:38:27.266766 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-03-14 11:44:01.504932 | Wildfire.py -- Logger Initialized
+[MSG] 2024-03-14 11:44:01.505646 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-03-14 11:44:01.505664 | Wildfire.py -- Running Fire-Starter.py -> truecaller.com
+[INIT] 2024-03-14 11:44:01.587940 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-03-14 11:44:01.597307 | Fire-Starter.py -- Running Amass -> truecaller.com
+[INIT] 2024-03-18 22:26:17.735344 | Wildfire.py -- Logger Initialized
+[MSG] 2024-03-18 22:26:17.735919 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-03-18 22:26:17.735939 | Wildfire.py -- Running Fire-Starter.py -> lyst.com
+[INIT] 2024-03-18 22:26:17.811652 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-03-18 22:26:17.821464 | Fire-Starter.py -- Running Amass -> lyst.com
+[MSG] 2024-03-18 23:26:57.309980 | Fire-Starter.py -- Amass Completed Successfully: 40 Results Found
+[MSG] 2024-03-18 23:26:57.318044 | Fire-Starter.py -- Running Sublist3r -> lyst.com
+[MSG] 2024-03-18 23:27:09.070595 | Fire-Starter.py -- Sublist3r Completed Successfully: 27 Results Found
+[MSG] 2024-03-18 23:27:09.076704 | Fire-Starter.py -- Running Assetfinder -> lyst.com
+[MSG] 2024-03-18 23:27:35.334447 | Fire-Starter.py -- Assetfinder Completed Successfully: 41 Results Found
+[MSG] 2024-03-18 23:27:35.341326 | Fire-Starter.py -- Running GAU -> lyst.com
+[MSG] 2024-03-18 23:43:55.970700 | Fire-Starter.py -- GAU Completed Successfully: 48 Results Found
+[MSG] 2024-03-18 23:43:55.978255 | Fire-Starter.py -- Running CRT -> lyst.com
+[MSG] 2024-03-18 23:44:22.049142 | Fire-Starter.py -- CTL Completed Successfully: 28 Results Found
+[MSG] 2024-03-18 23:44:22.056620 | Fire-Starter.py -- Running Subfinder -> lyst.com
+[MSG] 2024-03-18 23:45:25.059793 | Fire-Starter.py -- Subfinder Completed Successfully: 53 Results Found
+[MSG] 2024-03-18 23:45:25.066167 | Fire-Starter.py -- Running Subfinder (Recursive) -> lyst.com
+[MSG] 2024-03-18 23:46:59.428536 | Fire-Starter.py -- Subfinder (Recursive) Completed Successfully: 29 Results Found
+[MSG] 2024-03-18 23:46:59.436845 | Fire-Starter.py -- Running ShuffleDNS (Default) -> lyst.com
+[MSG] 2024-03-19 00:05:23.094145 | Fire-Starter.py -- ShuffleDNS (Default) Completed Successfully: 15 Results Found
+[MSG] 2024-03-19 00:05:23.102270 | Fire-Starter.py -- Building CeWL Wordlist -> lyst.com
+[MSG] 2024-03-19 00:12:37.510838 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> lyst.com
+[MSG] 2024-03-19 00:15:11.616979 | Fire-Starter.py -- ShuffleDNS (Custom) Completed Successfully: 6 Results Found
+[MSG] 2024-03-19 00:15:41.315671 | Fire-Starter.py -- Running GoSpider -> lyst.com
+[MSG] 2024-03-19 00:20:33.340400 | Fire-Starter.py -- GoSpider Completed Successfully: 15 Results Found
+[MSG] 2024-03-19 00:20:33.359225 | Fire-Starter.py -- Running Subdomainizer -> lyst.com
+[ERROR] 2024-03-19 00:25:03.216155 | Fire-Starter.py -- [!] Subdomainzier Timed Out!  Skipping...
+[MSG] 2024-03-19 00:25:03.246423 | Fire-Starter.py -- Subdomainizer Completed Successfully: 0 Results Found
+[MSG] 2024-03-19 00:25:03.254372 | Fire-Starter.py -- Clear Sky Data NOT Found.  Skipping...
+[MSG] 2024-03-19 00:25:33.054696 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-03-19 00:25:39.893591 | Fire-Starter.py -- Nuclei Update Succesful!
+[DONE] 2024-03-19 00:26:45.204570 | Fire-Starter.py -- Fire-Starter Completed Successfully -> lyst.com
+[MSG] 2024-03-19 00:26:45.234018 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-03-19 00:26:45.234319 | Wildfire.py -- Running Fire-Scanner.py -> lyst.com
+[INIT] 2024-03-19 00:26:45.351244 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-03-19 00:26:45.393183 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-03-19 00:26:45.845494 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-03-19 00:26:45.861796 | Fire-Scanner.py -- Running Nuclei (Technologies) -> lyst.com
+[ERROR] 2024-03-19 00:50:04.198931 | Fire-Scanner.py -- Running Nuclei (Technologies) Failed!  Exception: HTTPSConnectionPool(host='api.slack.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f297d491750>, 'Connection to api.slack.com timed out. (connect timeout=None)'))
+[MSG] 2024-03-19 00:50:04.203474 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> lyst.com
+[MSG] 2024-03-19 01:09:39.754730 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 01:09:39.759179 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> lyst.com
+[MSG] 2024-03-19 01:47:25.504443 | Fire-Scanner.py -- Nuceli Scan (Misconfiguration) Completed Successfully w/ 1474 Results Against lyst.com
+[MSG] 2024-03-19 01:47:25.513064 | Fire-Scanner.py -- Running Nuclei (Exposures) -> lyst.com
+[MSG] 2024-03-19 02:45:20.981349 | Fire-Scanner.py -- Nuceli Scan (Exposures) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 02:45:20.987220 | Fire-Scanner.py -- Running Nuclei (rs0n) -> lyst.com
+[MSG] 2024-03-19 02:49:07.976179 | Fire-Scanner.py -- Nuceli Scan (rs0n) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 02:49:07.979486 | Fire-Scanner.py -- Running Nuclei (Headless) -> lyst.com
+[MSG] 2024-03-19 02:53:25.178049 | Fire-Scanner.py -- Nuceli Scan (Headless) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 02:53:25.181085 | Fire-Scanner.py -- Running Nuclei (DNS) -> lyst.com
+[MSG] 2024-03-19 02:54:13.006172 | Fire-Scanner.py -- Nuceli Scan (DNS) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 02:54:13.010541 | Fire-Scanner.py -- Running Nuclei (SSL) -> lyst.com
+[MSG] 2024-03-19 02:55:32.733307 | Fire-Scanner.py -- Nuceli Scan (SSL) Completed Successfully w/ 536 Results Against lyst.com
+[MSG] 2024-03-19 02:55:32.737347 | Fire-Scanner.py -- Running Nuclei (Vulnerabilities) -> lyst.com
+[MSG] 2024-03-19 03:39:40.713139 | Fire-Scanner.py -- Nuceli Scan (Vulnerabilities) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 03:39:40.718911 | Fire-Scanner.py -- Running Nuclei (CVEs) -> lyst.com
+[MSG] 2024-03-19 04:44:13.480640 | Fire-Scanner.py -- Nuceli Scan (CVEs) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 04:44:13.486144 | Fire-Scanner.py -- Running Nuclei (File) -> lyst.com
+[MSG] 2024-03-19 04:59:25.750275 | Fire-Scanner.py -- Nuceli Scan (File) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 04:59:25.755162 | Fire-Scanner.py -- Running Nuclei (CNVD) -> lyst.com
+[MSG] 2024-03-19 05:01:15.736975 | Fire-Scanner.py -- Nuceli Scan (CNVD) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-19 05:01:15.740500 | Fire-Scanner.py -- Running Nuclei (Miscellaneous) -> lyst.com
+[MSG] 2024-03-19 05:02:35.752533 | Fire-Scanner.py -- Nuceli Scan (Miscellaneous) Completed Successfully w/ 104 Results Against lyst.com
+[DONE] 2024-03-19 05:02:35.756275 | Fire-Scanner.py -- Fire-Scanner Completed Successfully -> lyst.com
+[DONE] 2024-03-19 05:02:35.798889 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-03-23 01:52:41.290492 | Wildfire.py -- Logger Initialized
+[MSG] 2024-03-23 01:52:41.292978 | Single Scan Wildfire.py -- Cloud Flag Detected
+[MSG] 2024-03-23 01:52:41.293010 | Wildfire.py -- Running Fire-Cloud.py -> lyst.com
+[INIT] 2024-03-23 01:52:41.407495 | Fire-Cloud.py -- Logger Initialized
+[WARN] 2024-03-23 01:52:42.034510 | Fire-Cloud.py -- AWS Credentials NOT Provided!  Results of Scan May Not Be Accurate...
+[MSG] 2024-03-23 01:52:42.042194 | Fire-Cloud.py -- Service Detection Completed Successfully!  0 Services Detected.
+[MSG] 2024-03-23 01:52:42.046612 | Fire-Cloud.py -- Public S3 Bucket Checks Completed Successfully!
+[MSG] 2024-03-23 01:52:42.050811 | Fire-Cloud.py -- File Download Check on Public S3 Bucket Completed Successfully!
+[MSG] 2024-03-23 01:52:42.054554 | Fire-Cloud.py -- Authenticated S3 Bucket Checks Completed Successfully!
+[MSG] 2024-03-23 01:52:42.058641 | Fire-Cloud.py -- File Upload Check on Public S3 Bucket Completed Successfully!
+[MSG] 2024-03-23 01:52:42.062485 | Fire-Cloud.py -- AWS Service Subdomain Takeover Check Completed Successfully!
+[MSG] 2024-03-23 01:52:49.377164 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-03-23 01:52:49.377346 | Wildfire.py -- Running Fire-Scanner.py -> lyst.com
+[INIT] 2024-03-23 01:52:49.568698 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-03-23 01:52:49.896606 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-03-23 01:52:51.064332 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-03-23 01:52:51.083468 | Fire-Scanner.py -- Running Nuclei (Technologies) -> lyst.com
+[MSG] 2024-03-23 02:06:37.440757 | Fire-Scanner.py -- Nuceli Scan (Technologies) Completed Successfully w/ 227 Results Against lyst.com
+[MSG] 2024-03-23 02:06:37.444599 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> lyst.com
+[MSG] 2024-03-23 02:20:15.894221 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 02:20:15.898351 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> lyst.com
+[MSG] 2024-03-23 02:37:43.197687 | Fire-Scanner.py -- Nuceli Scan (Misconfiguration) Completed Successfully w/ 1378 Results Against lyst.com
+[MSG] 2024-03-23 02:37:43.203935 | Fire-Scanner.py -- Running Nuclei (Exposures) -> lyst.com
+[MSG] 2024-03-23 03:13:48.050392 | Fire-Scanner.py -- Nuceli Scan (Exposures) Completed Successfully w/ 3 Results Against lyst.com
+[MSG] 2024-03-23 03:13:48.055370 | Fire-Scanner.py -- Running Nuclei (rs0n) -> lyst.com
+[MSG] 2024-03-23 03:17:39.921895 | Fire-Scanner.py -- Nuceli Scan (rs0n) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 03:17:39.927147 | Fire-Scanner.py -- Running Nuclei (Headless) -> lyst.com
+[MSG] 2024-03-23 04:32:54.497074 | Fire-Scanner.py -- Nuceli Scan (Headless) Completed Successfully w/ 140 Results Against lyst.com
+[MSG] 2024-03-23 04:32:54.502180 | Fire-Scanner.py -- Running Nuclei (DNS) -> lyst.com
+[MSG] 2024-03-23 04:33:14.486069 | Fire-Scanner.py -- Nuceli Scan (DNS) Completed Successfully w/ 248 Results Against lyst.com
+[MSG] 2024-03-23 04:33:14.491517 | Fire-Scanner.py -- Running Nuclei (SSL) -> lyst.com
+[MSG] 2024-03-23 04:33:42.680673 | Fire-Scanner.py -- Nuceli Scan (SSL) Completed Successfully w/ 612 Results Against lyst.com
+[MSG] 2024-03-23 04:33:42.686917 | Fire-Scanner.py -- Running Nuclei (Vulnerabilities) -> lyst.com
+[MSG] 2024-03-23 05:00:57.396678 | Fire-Scanner.py -- Nuceli Scan (Vulnerabilities) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 05:00:57.405365 | Fire-Scanner.py -- Running Nuclei (CVEs) -> lyst.com
+[MSG] 2024-03-23 05:49:50.500962 | Fire-Scanner.py -- Nuceli Scan (CVEs) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 05:49:50.507634 | Fire-Scanner.py -- Running Nuclei (File) -> lyst.com
+[MSG] 2024-03-23 06:01:19.740541 | Fire-Scanner.py -- Nuceli Scan (File) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 06:01:19.750185 | Fire-Scanner.py -- Running Nuclei (CNVD) -> lyst.com
+[MSG] 2024-03-23 06:02:24.563846 | Fire-Scanner.py -- Nuceli Scan (CNVD) Completed Successfully w/ 0 Results Against lyst.com
+[MSG] 2024-03-23 06:02:24.570789 | Fire-Scanner.py -- Running Nuclei (Miscellaneous) -> lyst.com
+[MSG] 2024-03-23 06:04:58.468420 | Fire-Scanner.py -- Nuceli Scan (Miscellaneous) Completed Successfully w/ 121 Results Against lyst.com
+[DONE] 2024-03-23 06:04:59.147340 | Fire-Scanner.py -- Fire-Scanner Completed Successfully -> lyst.com
+[DONE] 2024-03-23 06:04:59.208400 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-04-22 10:37:56.092726 | Wildfire.py -- Logger Initialized
+[DONE] 2024-04-22 10:37:56.105982 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-04-22 10:38:37.859576 | Wildfire.py -- Logger Initialized
+[DONE] 2024-04-22 10:38:37.892662 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-05-23 11:27:24.620903 | Wildfire.py -- Logger Initialized
+[INIT] 2024-05-23 11:27:24.973102 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-23 11:27:24.979172 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-23 11:27:45.301732 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-23 11:28:01.080865 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-23 11:28:01.083267 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-23 11:28:01.625849 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-23 11:29:11.597528 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-23 11:29:11.603830 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-23 11:29:12.217237 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-23 11:31:48.961243 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-23 11:31:48.964466 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-23 11:31:54.501818 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-25 12:02:52.106571 | Wildfire.py -- Logger Initialized
+[INIT] 2024-05-25 12:02:52.378140 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-25 12:02:52.380325 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-25 12:03:09.774479 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-25 12:03:20.707429 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-25 12:03:20.709400 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-25 12:03:21.161916 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-05-25 12:04:19.361754 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-05-25 12:04:19.364485 | Fire-Starter.py -- Updating Nuclei...
+[MSG] 2024-05-25 12:04:19.869134 | Fire-Starter.py -- Nuclei Update Succesful!
+[INIT] 2024-06-07 21:30:56.929003 | Wildfire.py -- Logger Initialized
+[MSG] 2024-06-07 21:30:56.933173 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-06-07 21:30:56.933202 | Wildfire.py -- Running Fire-Starter.py -> trip.com
+[INIT] 2024-06-07 21:30:57.030254 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-06-07 21:30:57.045453 | Fire-Starter.py -- Running Amass -> trip.com
+[INIT] 2024-06-07 21:32:13.137887 | Wildfire.py -- Logger Initialized
+[MSG] 2024-06-07 21:32:13.138138 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-06-07 21:32:13.138168 | Wildfire.py -- Running Fire-Starter.py -> trip.com
+[INIT] 2024-06-07 21:32:13.236186 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-06-07 21:32:13.247766 | Fire-Starter.py -- Running Amass -> trip.com
+[MSG] 2024-06-07 22:32:35.980275 | Fire-Starter.py -- Amass Completed Successfully: 104 Results Found
+[MSG] 2024-06-07 22:32:36.002712 | Fire-Starter.py -- Running Sublist3r -> trip.com
+[MSG] 2024-06-07 22:32:59.720917 | Fire-Starter.py -- Sublist3r Completed Successfully: 178 Results Found
+[MSG] 2024-06-07 22:32:59.740702 | Fire-Starter.py -- Running Assetfinder -> trip.com
+[MSG] 2024-06-07 22:33:02.241044 | Fire-Starter.py -- Assetfinder Completed Successfully: 923 Results Found
+[MSG] 2024-06-07 22:33:02.252123 | Fire-Starter.py -- Running GAU -> trip.com
+[MSG] 2024-06-07 22:33:13.779532 | Fire-Starter.py -- Amass Completed Successfully: 104 Results Found
+[MSG] 2024-06-07 22:33:13.789749 | Fire-Starter.py -- Running Sublist3r -> trip.com
+[MSG] 2024-06-07 22:33:36.728179 | Fire-Starter.py -- Sublist3r Completed Successfully: 178 Results Found
+[MSG] 2024-06-07 22:33:36.738995 | Fire-Starter.py -- Running Assetfinder -> trip.com
+[MSG] 2024-06-07 22:33:41.897092 | Fire-Starter.py -- Assetfinder Completed Successfully: 923 Results Found
+[MSG] 2024-06-07 22:33:41.916491 | Fire-Starter.py -- Running GAU -> trip.com
+[MSG] 2024-06-07 22:35:48.722172 | Fire-Starter.py -- GAU Completed Successfully: 119 Results Found
+[MSG] 2024-06-07 22:35:48.739643 | Fire-Starter.py -- Running CRT -> trip.com
+[MSG] 2024-06-07 22:36:07.564633 | Fire-Starter.py -- CTL Completed Successfully: 25 Results Found
+[MSG] 2024-06-07 22:36:07.581074 | Fire-Starter.py -- Running Subfinder -> trip.com
+[ERROR] 2024-06-07 22:36:25.760923 | Fire-Starter.py -- GAU Exception: [Errno 2] No such file or directory: './temp/gau.tmp'
+[MSG] 2024-06-07 22:36:25.777391 | Fire-Starter.py -- Running CRT -> trip.com
+[MSG] 2024-06-07 22:36:32.556736 | Fire-Starter.py -- Subfinder Completed Successfully: 93 Results Found
+[MSG] 2024-06-07 22:36:32.573729 | Fire-Starter.py -- Running Subfinder (Recursive) -> trip.com
+[MSG] 2024-06-07 22:36:39.151236 | Fire-Starter.py -- Subfinder (Recursive) Completed Successfully: 93 Results Found
+[MSG] 2024-06-07 22:36:39.166721 | Fire-Starter.py -- Running ShuffleDNS (Default) -> trip.com
+[MSG] 2024-06-07 22:39:53.379643 | Fire-Starter.py -- CTL Completed Successfully: 25 Results Found
+[MSG] 2024-06-07 22:39:53.393739 | Fire-Starter.py -- Running Subfinder -> trip.com
+[MSG] 2024-06-07 22:40:44.546159 | Fire-Starter.py -- Subfinder Completed Successfully: 1 Results Found
+[MSG] 2024-06-07 22:40:44.560831 | Fire-Starter.py -- Running Subfinder (Recursive) -> trip.com
+[MSG] 2024-06-07 22:41:29.685755 | Fire-Starter.py -- Subfinder (Recursive) Completed Successfully: 1 Results Found
+[MSG] 2024-06-07 22:41:29.699821 | Fire-Starter.py -- Running ShuffleDNS (Default) -> trip.com
+[MSG] 2024-06-07 23:43:16.198074 | Fire-Starter.py -- ShuffleDNS (Default) Completed Successfully: 21 Results Found
+[MSG] 2024-06-07 23:43:16.209637 | Fire-Starter.py -- Building CeWL Wordlist -> trip.com
+[MSG] 2024-06-07 23:43:28.632040 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> trip.com
+[MSG] 2024-06-07 23:43:33.426207 | Fire-Starter.py -- ShuffleDNS (Custom) Completed Successfully: 2 Results Found
+[MSG] 2024-06-07 23:44:19.033066 | Fire-Starter.py -- Running GoSpider -> trip.com
+[MSG] 2024-06-07 23:46:52.800728 | Fire-Starter.py -- ShuffleDNS (Default) Completed Successfully: 22 Results Found
+[MSG] 2024-06-07 23:46:52.813954 | Fire-Starter.py -- Building CeWL Wordlist -> trip.com
+[MSG] 2024-06-07 23:46:54.363866 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> trip.com
+[MSG] 2024-06-07 23:46:55.905657 | Fire-Starter.py -- ShuffleDNS (Custom) Completed Successfully: 0 Results Found
+[MSG] 2024-06-07 23:47:48.942211 | Fire-Starter.py -- Running GoSpider -> trip.com
+[MSG] 2024-06-08 00:21:38.831673 | Fire-Starter.py -- GoSpider Completed Successfully: 36 Results Found
+[MSG] 2024-06-08 00:22:33.355419 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-06-08 00:22:33.366742 | Wildfire.py -- Running Fire-Scanner.py -> trip.com
+[INIT] 2024-06-08 00:22:33.600433 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-06-08 00:22:33.654586 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-06-08 00:22:34.502238 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-06-08 00:22:34.530927 | Fire-Scanner.py -- Running Nuclei (Technologies) -> trip.com
+[ERROR] 2024-06-08 00:26:55.588808 | Fire-Starter.py -- GoSpider Exception: [Errno 2] No such file or directory: './temp/gospider/trip_com'
+[MSG] 2024-06-08 00:27:49.659850 | Fire-Starter.py -- Running Subdomainizer -> trip.com
+[ERROR] 2024-06-08 00:27:49.673469 | Fire-Starter.py -- Subdomainizer Exception: [Errno 2] No such file or directory: './wordlists/live_servers.txt'
+[MSG] 2024-06-08 00:29:10.065449 | Fire-Starter.py -- Clear Sky Data NOT Found.  Skipping...
+[MSG] 2024-06-08 00:30:30.682548 | Single Scan Wildfire.py -- Cloud Flag Detected
+[MSG] 2024-06-08 00:30:30.703644 | Wildfire.py -- Running Fire-Cloud.py -> trip.com
+[INIT] 2024-06-08 00:30:30.812400 | Fire-Cloud.py -- Logger Initialized
+[WARN] 2024-06-08 00:30:30.833806 | Fire-Cloud.py -- AWS Credentials NOT Provided!  Results of Scan May Not Be Accurate...
+[MSG] 2024-06-08 00:30:30.839463 | Fire-Cloud.py -- Service Detection Completed Successfully!  1 Services Detected.
+[MSG] 2024-06-08 00:30:30.842016 | Fire-Cloud.py -- Public S3 Bucket Checks Completed Successfully!
+[MSG] 2024-06-08 00:30:30.843713 | Fire-Cloud.py -- File Download Check on Public S3 Bucket Completed Successfully!
+[MSG] 2024-06-08 00:30:30.845472 | Fire-Cloud.py -- Authenticated S3 Bucket Checks Completed Successfully!
+[MSG] 2024-06-08 00:30:30.847082 | Fire-Cloud.py -- File Upload Check on Public S3 Bucket Completed Successfully!
+[MSG] 2024-06-08 00:30:50.873882 | Fire-Cloud.py -- AWS Service Subdomain Takeover Check Completed Successfully!
+[MSG] 2024-06-08 00:30:50.934742 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-06-08 00:30:50.935169 | Wildfire.py -- Running Fire-Scanner.py -> trip.com
+[INIT] 2024-06-08 00:30:51.037932 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-06-08 00:30:51.083567 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-06-08 00:31:11.179488 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-06-08 00:31:11.190411 | Fire-Scanner.py -- Running Nuclei (Technologies) -> trip.com
+[MSG] 2024-06-08 00:33:41.729916 | Fire-Scanner.py -- Nuceli Scan (Technologies) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:33:41.733212 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> trip.com
+[MSG] 2024-06-08 00:34:17.659044 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:34:17.662461 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> trip.com
+[MSG] 2024-06-08 00:34:53.226797 | Fire-Scanner.py -- Nuceli Scan (Misconfiguration) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:34:53.229562 | Fire-Scanner.py -- Running Nuclei (Exposures) -> trip.com
+[MSG] 2024-06-08 00:37:37.245493 | Fire-Scanner.py -- Nuceli Scan (Exposures) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:37:37.248079 | Fire-Scanner.py -- Running Nuclei (rs0n) -> trip.com
+[MSG] 2024-06-08 00:37:54.208917 | Fire-Scanner.py -- Nuceli Scan (rs0n) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:37:54.211551 | Fire-Scanner.py -- Running Nuclei (Headless) -> trip.com
+[MSG] 2024-06-08 00:37:56.228215 | Fire-Scanner.py -- Nuceli Scan (Headless) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:37:56.234585 | Fire-Scanner.py -- Running Nuclei (DNS) -> trip.com
+[MSG] 2024-06-08 00:37:57.500672 | Fire-Scanner.py -- Nuceli Scan (DNS) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:37:57.503086 | Fire-Scanner.py -- Running Nuclei (SSL) -> trip.com
+[MSG] 2024-06-08 00:38:49.585456 | Fire-Scanner.py -- Nuceli Scan (SSL) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:38:49.587890 | Fire-Scanner.py -- Running Nuclei (Vulnerabilities) -> trip.com
+[MSG] 2024-06-08 00:39:06.701539 | Fire-Scanner.py -- Nuceli Scan (Vulnerabilities) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:39:06.704286 | Fire-Scanner.py -- Running Nuclei (CVEs) -> trip.com
+[MSG] 2024-06-08 00:39:13.483463 | Fire-Scanner.py -- Nuceli Scan (CVEs) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:39:13.486844 | Fire-Scanner.py -- Running Nuclei (File) -> trip.com
+[MSG] 2024-06-08 00:39:50.285015 | Fire-Scanner.py -- Nuceli Scan (File) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:39:50.287339 | Fire-Scanner.py -- Running Nuclei (CNVD) -> trip.com
+[MSG] 2024-06-08 00:39:56.461070 | Fire-Scanner.py -- Nuceli Scan (CNVD) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:39:56.465301 | Fire-Scanner.py -- Running Nuclei (Miscellaneous) -> trip.com
+[MSG] 2024-06-08 00:39:57.662771 | Fire-Scanner.py -- Nuceli Scan (Miscellaneous) Completed Successfully w/ 0 Results Against trip.com
+[DONE] 2024-06-08 00:39:58.068965 | Fire-Scanner.py -- Fire-Scanner Completed Successfully -> trip.com
+[DONE] 2024-06-08 00:39:58.819144 | Wildfire.py -- Wildfire Completed Successfully
+[MSG] 2024-06-08 00:54:44.214713 | Fire-Scanner.py -- Nuceli Scan (Technologies) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:44.218772 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> trip.com
+[MSG] 2024-06-08 00:54:46.278933 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:46.281318 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> trip.com
+[MSG] 2024-06-08 00:54:47.759979 | Fire-Scanner.py -- Nuceli Scan (Misconfiguration) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:47.762312 | Fire-Scanner.py -- Running Nuclei (Exposures) -> trip.com
+[MSG] 2024-06-08 00:54:49.191133 | Fire-Scanner.py -- Nuceli Scan (Exposures) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:49.193374 | Fire-Scanner.py -- Running Nuclei (rs0n) -> trip.com
+[MSG] 2024-06-08 00:54:50.830254 | Fire-Scanner.py -- Nuceli Scan (rs0n) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:50.832168 | Fire-Scanner.py -- Running Nuclei (Headless) -> trip.com
+[MSG] 2024-06-08 00:54:52.416647 | Fire-Scanner.py -- Nuceli Scan (Headless) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:52.419033 | Fire-Scanner.py -- Running Nuclei (DNS) -> trip.com
+[MSG] 2024-06-08 00:54:53.583408 | Fire-Scanner.py -- Nuceli Scan (DNS) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:53.585656 | Fire-Scanner.py -- Running Nuclei (SSL) -> trip.com
+[MSG] 2024-06-08 00:54:54.760787 | Fire-Scanner.py -- Nuceli Scan (SSL) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:54.763279 | Fire-Scanner.py -- Running Nuclei (Vulnerabilities) -> trip.com
+[MSG] 2024-06-08 00:54:56.537653 | Fire-Scanner.py -- Nuceli Scan (Vulnerabilities) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:56.540252 | Fire-Scanner.py -- Running Nuclei (CVEs) -> trip.com
+[MSG] 2024-06-08 00:54:59.827916 | Fire-Scanner.py -- Nuceli Scan (CVEs) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:54:59.831296 | Fire-Scanner.py -- Running Nuclei (File) -> trip.com
+[MSG] 2024-06-08 00:55:01.090006 | Fire-Scanner.py -- Nuceli Scan (File) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:55:01.092220 | Fire-Scanner.py -- Running Nuclei (CNVD) -> trip.com
+[MSG] 2024-06-08 00:55:02.256667 | Fire-Scanner.py -- Nuceli Scan (CNVD) Completed Successfully w/ 0 Results Against trip.com
+[MSG] 2024-06-08 00:55:02.260655 | Fire-Scanner.py -- Running Nuclei (Miscellaneous) -> trip.com
+[MSG] 2024-06-08 00:55:03.406492 | Fire-Scanner.py -- Nuceli Scan (Miscellaneous) Completed Successfully w/ 0 Results Against trip.com
+[DONE] 2024-06-08 00:55:03.596606 | Fire-Scanner.py -- Fire-Scanner Completed Successfully -> trip.com
+[DONE] 2024-06-08 00:55:04.228891 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-06-08 02:23:01.710900 | Wildfire.py -- Logger Initialized
+[MSG] 2024-06-08 02:23:01.711109 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-06-08 02:23:01.711133 | Wildfire.py -- Running Fire-Starter.py -> truecaller.com
+[INIT] 2024-06-08 02:23:01.802330 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-06-08 02:23:01.812102 | Fire-Starter.py -- Running Amass -> truecaller.com
+[ERROR] 2024-06-08 02:26:47.411231 | Fire-Starter.py -- Amass Exception: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/auto/update (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb904952490>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[MSG] 2024-06-08 02:26:47.415146 | Fire-Starter.py -- Running Sublist3r -> truecaller.com
+[MSG] 2024-06-08 02:26:47.418973 | Fire-Starter.py -- Running Assetfinder -> truecaller.com
+[MSG] 2024-06-08 02:26:47.422546 | Fire-Starter.py -- Running GAU -> truecaller.com
+[MSG] 2024-06-08 02:26:47.425441 | Fire-Starter.py -- Running CRT -> truecaller.com
+[MSG] 2024-06-08 02:26:47.428920 | Fire-Starter.py -- Running Subfinder -> truecaller.com
+[MSG] 2024-06-08 02:26:47.431979 | Fire-Starter.py -- Running Subfinder (Recursive) -> truecaller.com
+[MSG] 2024-06-08 02:26:47.435651 | Fire-Starter.py -- Running ShuffleDNS (Default) -> truecaller.com
+[MSG] 2024-06-08 02:26:47.438968 | Fire-Starter.py -- Building CeWL Wordlist -> truecaller.com
+[MSG] 2024-06-08 02:27:37.735193 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> truecaller.com
+[INIT] 2024-06-08 02:27:38.597902 | Wildfire.py -- Logger Initialized
+[MSG] 2024-06-08 02:27:38.598074 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-06-08 02:27:38.598091 | Wildfire.py -- Running Fire-Starter.py -> truecaller.com
+[INIT] 2024-06-08 02:27:38.686895 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-06-08 02:27:38.705582 | Fire-Starter.py -- Running Amass -> truecaller.com
+[ERROR] 2024-06-08 02:31:32.346853 | Fire-Starter.py -- Amass Exception: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/auto/update (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5dc1bff110>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[MSG] 2024-06-08 02:31:32.354938 | Fire-Starter.py -- Running Sublist3r -> truecaller.com
+[MSG] 2024-06-08 02:31:32.358870 | Fire-Starter.py -- Running Assetfinder -> truecaller.com
+[MSG] 2024-06-08 02:31:32.362803 | Fire-Starter.py -- Running GAU -> truecaller.com
+[MSG] 2024-06-08 02:31:32.366492 | Fire-Starter.py -- Running CRT -> truecaller.com
+[MSG] 2024-06-08 02:31:32.370866 | Fire-Starter.py -- Running Subfinder -> truecaller.com
+[MSG] 2024-06-08 02:31:32.374837 | Fire-Starter.py -- Running Subfinder (Recursive) -> truecaller.com
+[MSG] 2024-06-08 02:31:32.378595 | Fire-Starter.py -- Running ShuffleDNS (Default) -> truecaller.com
+[MSG] 2024-06-08 02:31:32.382090 | Fire-Starter.py -- Building CeWL Wordlist -> truecaller.com
+[MSG] 2024-06-08 02:31:40.029019 | Single Scan Wildfire.py -- Cloud Flag Detected
+[MSG] 2024-06-08 02:31:40.029240 | Wildfire.py -- Running Fire-Cloud.py -> truecaller.com
+[INIT] 2024-06-08 02:31:40.132494 | Fire-Cloud.py -- Logger Initialized
+[MSG] 2024-06-08 02:31:40.152562 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-06-08 02:31:40.152698 | Wildfire.py -- Running Fire-Scanner.py -> truecaller.com
+[INIT] 2024-06-08 02:31:40.264278 | Fire-Scanner.py -- Logger Initialized
+[ERROR] 2024-06-08 02:31:40.293419 | Wildfire.py -- Error Updating Log Database! Exception: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/log/new (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8dac6b3150>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[DONE] 2024-06-08 02:31:40.293499 | Wildfire.py -- Wildfire Completed Successfully
+[MSG] 2024-06-08 02:32:14.613689 | Fire-Starter.py -- Running ShuffleDNS (Custom) -> truecaller.com
+[WARN] 2024-06-08 02:32:41.775449 | Fire-Starter.py -- ShuffleDNS (Custom) Exception: 'NoneType' object is not subscriptable
+[MSG] 2024-06-08 02:32:41.839185 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-06-08 02:32:41.839323 | Wildfire.py -- Running Fire-Scanner.py -> truecaller.com
+[INIT] 2024-06-08 02:32:41.958128 | Fire-Scanner.py -- Logger Initialized
+[DONE] 2024-06-08 02:32:42.007753 | Wildfire.py -- Wildfire Completed Successfully
+[INIT] 2024-06-08 02:35:31.737445 | Wildfire.py -- Logger Initialized
+[MSG] 2024-06-08 02:35:31.737646 | Single Scan Wildfire.py -- Start Flag Detected
+[MSG] 2024-06-08 02:35:31.737669 | Wildfire.py -- Running Fire-Starter.py -> uber.com
+[INIT] 2024-06-08 02:35:31.827040 | Fire-Starter.py -- Logger Initialized
+[MSG] 2024-06-08 02:35:31.839953 | Fire-Starter.py -- Running Amass -> uber.com
+[MSG] 2024-06-08 03:36:11.528350 | Fire-Starter.py -- Amass Completed Successfully: 230 Results Found
+[MSG] 2024-06-08 03:36:11.539259 | Fire-Starter.py -- Running Sublist3r -> uber.com
+[MSG] 2024-06-08 03:36:34.944389 | Fire-Starter.py -- Sublist3r Completed Successfully: 158 Results Found
+[MSG] 2024-06-08 03:36:34.951600 | Fire-Starter.py -- Running Assetfinder -> uber.com
+[MSG] 2024-06-08 03:36:42.232334 | Fire-Starter.py -- Assetfinder Completed Successfully: 214 Results Found
+[MSG] 2024-06-08 03:36:42.238801 | Fire-Starter.py -- Running GAU -> uber.com
+[MSG] 2024-06-08 03:51:50.120664 | Fire-Starter.py -- GAU Completed Successfully: 282 Results Found
+[MSG] 2024-06-08 03:51:50.127750 | Fire-Starter.py -- Running CRT -> uber.com
+[MSG] 2024-06-08 03:52:45.162162 | Fire-Starter.py -- CTL Completed Successfully: 158 Results Found
+[MSG] 2024-06-08 03:52:45.169513 | Fire-Starter.py -- Running Subfinder -> uber.com
+[MSG] 2024-06-08 03:53:18.726078 | Fire-Starter.py -- Subfinder Completed Successfully: 9923 Results Found
+[MSG] 2024-06-08 04:08:57.368756 | Single Scan Wildfire.py -- Scan Flag Detected
+[MSG] 2024-06-08 04:08:57.368960 | Wildfire.py -- Running Fire-Scanner.py -> uber.com
+[INIT] 2024-06-08 04:08:57.439391 | Fire-Scanner.py -- Logger Initialized
+[MSG] 2024-06-08 04:08:57.848222 | Fire-Scanner.py -- Updating Nuclei...
+[MSG] 2024-06-08 04:09:17.970271 | Fire-Scanner.py -- Nuclei Update Succesful!
+[MSG] 2024-06-08 04:09:18.029578 | Fire-Scanner.py -- Running Nuclei (Technologies) -> uber.com
+[ERROR] 2024-06-08 05:26:13.084976 | Fire-Scanner.py -- Running Nuclei (Technologies) Failed!  Exception: HTTPSConnectionPool(host='hooks.slack.com', port=443): Max retries exceeded with url: /services/%0A (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f1845caf0d0>, 'Connection to hooks.slack.com timed out. (connect timeout=None)'))
+[MSG] 2024-06-08 05:26:13.091046 | Fire-Scanner.py -- Running Nuclei (Exposed Panels) -> uber.com
+[MSG] 2024-06-08 05:35:48.573535 | Fire-Scanner.py -- Nuceli Scan (Exposed Panels) Completed Successfully w/ 0 Results Against uber.com
+[MSG] 2024-06-08 05:35:48.576230 | Fire-Scanner.py -- Running Nuclei (Misconfiguration) -> uber.com
+[MSG] 2024-06-08 05:46:57.293341 | Fire-Scanner.py -- Nuceli Scan (Misconfiguration) Completed Successfully w/ 20 Results Against uber.com
+[MSG] 2024-06-08 05:46:57.295750 | Fire-Scanner.py -- Running Nuclei (Exposures) -> uber.com
+[MSG] 2024-06-08 06:05:05.192808 | Fire-Scanner.py -- Nuceli Scan (Exposures) Completed Successfully w/ 0 Results Against uber.com
+[MSG] 2024-06-08 06:05:05.195285 | Fire-Scanner.py -- Running Nuclei (rs0n) -> uber.com
+[MSG] 2024-06-08 06:51:21.322693 | Fire-Scanner.py -- Nuceli Scan (rs0n) Completed Successfully w/ 0 Results Against uber.com
+[MSG] 2024-06-08 06:51:21.326245 | Fire-Scanner.py -- Running Nuclei (Headless) -> uber.com
+[MSG] 2024-06-08 09:25:45.075214 | Fire-Scanner.py -- Nuceli Scan (Headless) Completed Successfully w/ 101 Results Against uber.com
+[MSG] 2024-06-08 09:25:45.083623 | Fire-Scanner.py -- Running Nuclei (DNS) -> uber.com
+[ERROR] 2024-06-08 09:27:24.278546 | Fire-Scanner.py -- Running Nuclei (DNS) Failed!  Exception: HTTPSConnectionPool(host='hooks.slack.com', port=443): Max retries exceeded with url: /services/%0A (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1845a848d0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[MSG] 2024-06-08 09:27:24.286057 | Fire-Scanner.py -- Running Nuclei (SSL) -> uber.com
+[ERROR] 2024-06-08 09:55:43.125733 | Fire-Scanner.py -- Running Nuclei (SSL) Failed!  Exception: HTTPSConnectionPool(host='hooks.slack.com', port=443): Max retries exceeded with url: /services/%0A (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f18462aa2d0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[MSG] 2024-06-08 09:55:43.131903 | Fire-Scanner.py -- Running Nuclei (Vulnerabilities) -> uber.com
