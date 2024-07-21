@@ -138,4 +138,3 @@ These tools cover a wide range of techniques to identify hidden subdomains, incl
 Fire-Scanner uses the results of Fire-Starter and Fire-Cloud to perform [Wide-Band Scanning](https://www.linkedin.com/feed/update/urn:li:activity:6849314055283466240/) against all subdomains and cloud services that have been discovered from previous scans.
 
 At this stage of development, this script leverages [Nuclei](https://github.com/projectdiscovery/nuclei) almost exclusively for all scanning.  Instead of simply running the tool, Fire-Scanner breaks the scan down into specific collections of [Nuclei Templates](https://github.com/projectdiscovery/nuclei-templates) and scans them one by one.  This strategy helps ensure the scans are stable and produce consistent results, removes any unnecessary or unsafe scan checks, and produces actionable results.
-
