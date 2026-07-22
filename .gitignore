@@ -1,0 +1,28 @@
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Frontend build and tool caches
+.cache/
+**/.cache/
+client/build/
+dist/
+
+# Python environments and caches
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Scanner-generated data
+toolkit/temp/
+toolkit/reports/
+toolkit/screenshots/
+*.dump
