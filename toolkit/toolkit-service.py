@@ -224,6 +224,19 @@ def wildfire():
 
     scan_obj.core_module = "wildfire.py"
 
+    dry_run = data.get("dryRun", False)
+
+    if not isinstance(dry_run, bool):
+        return jsonify({
+        "error": "dryRun must be a Boolean value"
+    }), 400
+
+    if dry_run:
+        return jsonify({
+        "message": "Dry run successful",
+        "command": command,
+    }), 200
+
     start_scan(
         fire_starter,
         fire_cloud,
