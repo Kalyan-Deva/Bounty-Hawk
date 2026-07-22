@@ -1,0 +1,9 @@
+beautifulsoup4>=4.12,<5
+Flask>=3.0,<4
+Flask-Cors>=4,<7
+Pillow>=10,<12
+dnspython>=2.6,<3
+psutil>=5.9,<8
+requests>=2.31,<3
+termcolor>=2.4,<4
+xmltodict>=0.13,<1
