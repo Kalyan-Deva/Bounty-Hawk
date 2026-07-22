@@ -26,3 +26,21 @@ toolkit/temp/
 toolkit/reports/
 toolkit/screenshots/
 *.dump
+
+# Local backups
+.backups/
+
+# Runtime screenshots and scan output
+client/public/screenshots/
+toolkit/screenshots/
+toolkit/reports/
+toolkit/temp/
+
+# Machine-specific authorization configuration
+toolkit/authorized-scopes.json
+
+# Historical local backup files
+toolkit/*.before-*
+
+# Local smoke-test website
+local-test-site/

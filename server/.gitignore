@@ -1,0 +1,25 @@
+.env
+node_modules/
+npm-debug.log*
+
+# Dependencies
+client/node_modules/
+server/node_modules/
+
+# Environment
+.env
+client/.env
+server/.env
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Runtime data
+logs/*.log
+toolkit/*.dump
+toolkit/nuclei-stacktrace-*.dump
+toolkit/screenshots/
+client/public/screenshots/

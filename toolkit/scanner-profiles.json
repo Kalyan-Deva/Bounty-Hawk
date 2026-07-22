@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "local": {
+      "description": "Local lab target. No internet OSINT or DNS brute force.",
+      "modules": [
+        "dns",
+        "http_probe",
+        "crawl",
+        "screenshot"
+      ]
+    },
+    "standard": {
+      "description": "Passive-first public target reconnaissance.",
+      "modules": [
+        "dns",
+        "amass",
+        "sublist3r",
+        "assetfinder",
+        "gau",
+        "crt",
+        "subfinder",
+        "http_probe",
+        "crawl",
+        "screenshot"
+      ]
+    },
+    "deep": {
+      "description": "Standard reconnaissance plus recursive and brute-force modules.",
+      "modules": [
+        "dns",
+        "amass",
+        "sublist3r",
+        "assetfinder",
+        "gau",
+        "crt",
+        "subfinder",
+        "subfinder_recursive",
+        "shuffledns",
+        "http_probe",
+        "crawl",
+        "subdomainizer",
+        "screenshot"
+      ]
+    }
+  }
+}
