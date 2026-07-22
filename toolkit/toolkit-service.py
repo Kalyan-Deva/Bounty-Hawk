@@ -1,10 +1,38 @@
+import logging
+import os
+import psutil
+import re
+import signal
+import subprocess
+import sys
+from pathlib import Path
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import logging
-import subprocess
-import psutil
-import os
-import signal
+
+TOOLKIT_DIR = Path(__file__).resolve().parent
+
+DOMAIN_PATTERN = re.compile(
+    r"^(?=.{1,253}$)"
+    r"(?:"
+    r"[a-zA-Z0-9]"
+    r"(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?"
+    r"\."
+    r")+"
+    r"[a-zA-Z]{2,63}$"
+)
+
+
+def validate_domain(value):
+    if not isinstance(value, str):
+        raise ValueError("Domain must be a string")
+
+    domain = value.strip().lower()
+
+    if not DOMAIN_PATTERN.fullmatch(domain):
+        raise ValueError("Invalid domain format")
+
+    return domain
 
 app = Flask(__name__)
 log = logging.getLogger('werkzeug')
@@ -111,39 +139,155 @@ def update_scan():
     else:
         return jsonify({"message": "ERROR: Scan Not Currently Running..."})
 
-@app.route('/wildfire', methods=['POST'])
+@app.route("/wildfire", methods=["POST"])
 def wildfire():
     global scan_obj
-    if not scan_obj.scan_running:
-        data = request.get_json()
-        fire_starter = data['fireStarter']
-        fire_cloud = data['fireCloud']
-        fire_scanner = data['fireScanner']
-        fqdn = data.get('fqdn', '')
-        scan_single_domain = data.get('scanSingleDomain', False)
-        domain_count = data.get('domainCount', 1)
-        start_flag, cloud_flag, scan_flag, fqdn_flag, scanSingle_flag  = "", "", "", "", ""
-        if fire_starter:
-            start_flag = " --start"
-        if fire_cloud:
-            cloud_flag = " --cloud"
-        if fire_scanner:
-            scan_flag = " --scan"
-        if scan_single_domain:
-            fqdn_flag = f" --fqdn {fqdn}"
-            scanSingle_flag = f" --scanSingle"
-        scan_obj.core_module = "Wildfire.py"
-        start_scan(fire_starter, fire_cloud, fire_scanner, domain_count, scan_obj.core_module)
-        subprocess.run([f"python3 wildfire.py{start_flag}{cloud_flag}{scan_flag}{fqdn_flag}{scanSingle_flag}"], shell=True)
-        stop_scan()
-        return jsonify({"message": "Done!"})
-    else:
-        return jsonify({"message": "ERROR: Scan Running..."})
 
-@app.route('/collect_sceenshots', methods=['POST'])
+    if scan_obj.scan_running:
+        return jsonify({
+            "message": "ERROR: Scan Running..."
+        }), 409
+
+    data = request.get_json(silent=True)
+
+    if not isinstance(data, dict):
+        return jsonify({
+            "error": "Request body must contain valid JSON"
+        }), 400
+
+    fire_starter = data.get("fireStarter", False)
+    fire_cloud = data.get("fireCloud", False)
+    fire_scanner = data.get("fireScanner", False)
+    scan_single_domain = data.get("scanSingleDomain", False)
+    domain_count = data.get("domainCount", 1)
+
+    # Require actual Boolean values.
+    boolean_values = [
+        fire_starter,
+        fire_cloud,
+        fire_scanner,
+        scan_single_domain,
+    ]
+
+    if not all(isinstance(value, bool) for value in boolean_values):
+        return jsonify({
+            "error": "Scan options must be Boolean values"
+        }), 400
+
+    try:
+        domain_count = int(domain_count)
+
+        if domain_count < 1:
+            raise ValueError
+    except (TypeError, ValueError):
+        return jsonify({
+            "error": "domainCount must be a positive integer"
+        }), 400
+
+    command = [
+        sys.executable,
+        str(TOOLKIT_DIR / "wildfire.py"),
+    ]
+
+    if fire_starter:
+        command.append("--start")
+
+    if fire_cloud:
+        command.append("--cloud")
+
+    if fire_scanner:
+        command.append("--scan")
+
+    if scan_single_domain:
+        try:
+            fqdn = validate_domain(data.get("fqdn", ""))
+        except ValueError as error:
+            return jsonify({
+                "error": str(error)
+            }), 400
+
+        command.extend([
+            "--fqdn",
+            fqdn,
+            "--scanSingle",
+        ])
+
+    if not any([
+        fire_starter,
+        fire_cloud,
+        fire_scanner,
+        scan_single_domain,
+    ]):
+        return jsonify({
+            "error": "Select at least one scan option"
+        }), 400
+
+    scan_obj.core_module = "wildfire.py"
+
+    start_scan(
+        fire_starter,
+        fire_cloud,
+        fire_scanner,
+        domain_count,
+        scan_obj.core_module,
+    )
+
+    try:
+        completed_process = subprocess.run(
+            command,
+            cwd=TOOLKIT_DIR,
+            check=True,
+            shell=False,
+        )
+
+        return jsonify({
+            "message": "Scan completed",
+            "exit_code": completed_process.returncode,
+        })
+
+    except subprocess.CalledProcessError as error:
+        return jsonify({
+            "error": "Wildfire exited with an error",
+            "exit_code": error.returncode,
+        }), 500
+
+    except OSError as error:
+        return jsonify({
+            "error": f"Unable to launch Wildfire: {error}"
+        }), 500
+
+    finally:
+        stop_scan()
+
+@app.route("/collect_sceenshots", methods=["POST"])
 def collect_sceenshots():
-    subprocess.run([f"python3 wildfire.py --screenshots"], shell=True)
-    return "Done!"
+    try:
+        completed_process = subprocess.run(
+            [
+                sys.executable,
+                str(TOOLKIT_DIR / "wildfire.py"),
+                "--screenshots",
+            ],
+            cwd=TOOLKIT_DIR,
+            check=True,
+            shell=False,
+        )
+
+        return jsonify({
+            "message": "Screenshot collection completed",
+            "exit_code": completed_process.returncode,
+        })
+
+    except subprocess.CalledProcessError as error:
+        return jsonify({
+            "error": "Screenshot collection failed",
+            "exit_code": error.returncode,
+        }), 500
+
+    except OSError as error:
+        return jsonify({
+            "error": f"Unable to launch Wildfire: {error}"
+        }), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
