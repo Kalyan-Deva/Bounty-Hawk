@@ -37,7 +37,22 @@ def validate_domain(value):
 app = Flask(__name__)
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-CORS(app)
+
+# Browser origins allowed to call the toolkit. The Vite client proxies its
+# requests, and they arrive with one of these.
+ALLOWED_ORIGINS = [o.strip() for o in os.environ.get(
+    "BH_ALLOWED_ORIGINS",
+    "http://127.0.0.1:3000,http://localhost:3000,http://127.0.0.1:4173,http://localhost:4173",
+).split(",") if o.strip()]
+CORS(app, origins=ALLOWED_ORIGINS)
+
+@app.before_request
+def block_cross_site_requests():
+    # Any other web page you visit could otherwise start or stop scans here.
+    # Requests without an Origin header (the Express API, curl) are allowed.
+    origin = request.headers.get("Origin")
+    if origin and origin not in ALLOWED_ORIGINS:
+        return jsonify({"error": f"Origin {origin} is not allowed"}), 403
 
 class Scan:
     def __init__(self):
@@ -303,4 +318,10 @@ def collect_sceenshots():
         }), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Loopback only, and no Werkzeug debugger unless asked for (BH_TOOLKIT_DEBUG=1):
+    # the debugger runs arbitrary code for anyone who can reach it.
+    app.run(
+        host=os.environ.get("BH_TOOLKIT_HOST", "127.0.0.1"),
+        port=int(os.environ.get("BH_TOOLKIT_PORT", "5000")),
+        debug=os.environ.get("BH_TOOLKIT_DEBUG") == "1",
+    )

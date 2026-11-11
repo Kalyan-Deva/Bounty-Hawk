@@ -1,7 +1,17 @@
 const mongoose = require('mongoose');
 
+// Target names end up in shell commands in the toolkit, so only plain DNS names are allowed.
+const DOMAIN_RE = /^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i;
+
 const FqdnSchema = new mongoose.Schema({
-    fqdn: {type:String},
+    fqdn: {
+        type: String,
+        required: [true, "fqdn is required"],
+        validate: {
+            validator: (value) => DOMAIN_RE.test(value),
+            message: (props) => `"${props.value}" is not a plain domain name such as example.com`,
+        },
+    },
     dns: {
         arecord: [{
             type: String
@@ -626,3 +636,4 @@ const FqdnSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 module.exports.Fqdn = mongoose.model("Fqdn", FqdnSchema);
+module.exports.DOMAIN_RE = DOMAIN_RE;

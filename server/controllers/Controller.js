@@ -1,4 +1,4 @@
-const { Fqdn } = require("../models/fqdn.model");
+const { Fqdn, DOMAIN_RE } = require("../models/fqdn.model");
 const { Url } = require("../models/url.model");
 const { Cve } = require("../models/cve.model");
 const { Log } = require("../models/log.model");
@@ -39,8 +39,18 @@ module.exports.deleteCve = (req, res) => {
 
 // Fqdn Controllers
 
+// Returns an error message, or null if `value` is a plain domain name.
+const checkFqdn = (value, required) => {
+    if (value === undefined && !required) return null;
+    if (typeof value !== "string" || !DOMAIN_RE.test(value)) {
+        return "fqdn must be a plain domain name such as example.com";
+    }
+    return null;
+}
+
 module.exports.addFqdn = (req, res) => {
-    
+    const error = checkFqdn(req.body.fqdn, true);
+    if (error) return res.status(400).json({ error });
     Fqdn.create(req.body)
         .then(newFqdn=>res.json(newFqdn))
         .catch(err=>res.status(400).json(err))
@@ -68,7 +78,8 @@ module.exports.deleteFqdn = (req, res) => {
 }
 
 module.exports.updateFqdn = (req, res) => {
-    console.log(req.body)
+    const error = checkFqdn(req.body.fqdn, false);
+    if (error) return res.status(400).json({ error });
     Fqdn.findOneAndUpdate(
         { _id: req.body._id },
         req.body,
@@ -78,14 +89,16 @@ module.exports.updateFqdn = (req, res) => {
 }
 
 module.exports.autoGetFqdn = (req, res) => {
-    
+    const error = checkFqdn(req.body.fqdn, true);
+    if (error) return res.status(400).json({ error });
     Fqdn.findOne({ fqdn: req.body.fqdn })
         .then(oneFqdn=>res.json(oneFqdn))
         .catch(err=>res.status(400).json(err))
 }
 
 module.exports.autoUpdateFqdn = (req, res) => {
-    
+    const error = checkFqdn(req.body.fqdn, true);
+    if (error) return res.status(400).json({ error });
     Fqdn.findOneAndUpdate(
         { fqdn: req.body.fqdn },
         req.body,
